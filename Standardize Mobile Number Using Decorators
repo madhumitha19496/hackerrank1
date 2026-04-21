@@ -1,0 +1,18 @@
+def wrapper(f):
+    def fun(l):
+        # Step 1: Create a new list to store formatted numbers
+        formatted_list = []
+        
+        for num in l:
+            # Step 2: Extract the last 10 digits
+            # This handles 0..., 91..., +91..., or just the 10 digits
+            clean_num = num[-10:]
+            
+            # Step 3: Format as +91 xxxxx xxxxx
+            formatted_num = f"+91 {clean_num[:5]} {clean_num[5:]}"
+            formatted_list.append(formatted_num)
+        
+        # Step 4: Call the original function 'f' (sort_phone) 
+        # with the newly formatted list
+        return f(formatted_list)
+    return fun
