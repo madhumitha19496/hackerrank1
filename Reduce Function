@@ -1,0 +1,7 @@
+def product(fracs):
+    # Step 1: Use reduce to multiply all Fraction objects in the list
+    # The lambda function takes two fractions (x, y) and returns their product
+    t = reduce(lambda x, y: x * y, fracs)
+    
+    # Step 2: Return the numerator and denominator of the simplified result
+    return t.numerator, t.denominator
