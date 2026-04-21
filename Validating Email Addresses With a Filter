@@ -1,0 +1,20 @@
+import re
+
+def fun(s):
+    # Regular Expression explained:
+    # ^[a-zA-Z0-9_-]+   : Username starts at the beginning, allows letters, digits, _, -
+    # @                 : Must contain exactly one @ symbol
+    # [a-zA-Z0-9]+      : Website name allows only letters and digits
+    # \.                : Must contain a dot before the extension
+    # [a-zA-Z]{1,3}$    : Extension allows only letters, length 1 to 3, at the end
+    
+    pattern = r'^[a-zA-Z0-9_-]+@[a-zA-Z0-9]+\.[a-zA-Z]{1,3}$'
+    
+    # re.match returns a Match object if valid, None if invalid
+    if re.match(pattern, s):
+        return True
+    return False
+
+
+
+
