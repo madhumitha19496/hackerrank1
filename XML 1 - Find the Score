@@ -1,0 +1,12 @@
+def get_attr_number(node):
+
+
+    # Step 1: Initialize the score with the number of attributes of the current node
+    # .attrib returns a dictionary of attributes, len() gives the count
+    total_score = len(node.attrib)
+    
+    # Step 2: Recursively iterate through all child elements
+    for child in node:
+        total_score += get_attr_number(child)
+        
+    return total_score
