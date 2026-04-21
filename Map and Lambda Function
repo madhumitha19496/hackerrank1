@@ -1,0 +1,28 @@
+cube = lambda x: x**3
+
+def fibonacci(n):
+    # Handle the base cases for 0 and 1
+    if n == 0:
+        return []
+    elif n == 1:
+        return [0]
+    
+    # Initialize the list with the first two Fibonacci numbers
+    fib_list = [0, 1]
+    
+    # Generate the rest of the numbers until we reach length n
+    while len(fib_list) < n:
+        fib_list.append(fib_list[-1] + fib_list[-2])
+        
+    return fib_list
+
+
+
+
+
+
+
+
+
+
+
