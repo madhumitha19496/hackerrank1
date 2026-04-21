@@ -1,0 +1,6 @@
+def person_lister(f):
+    def inner(people):
+        # Sort by age (index 2). 
+        # people[2] is a string in the input, so we convert to int for proper numeric sorting.
+        return map(f, sorted(people, key=lambda x: int(x[2])))
+    return inner
